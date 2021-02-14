@@ -1,0 +1,97 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": { "version": "detect" }
+  },
+  "plugins": [
+    "eslint-plugin-jest",
+    "@typescript-eslint",
+    "react-hooks",
+    "react",
+    "eslint-plugin-import",
+    "sonarjs"
+  ],
+  "rules": {
+    // basics
+    "spaced-comment": ["warn", "always"],
+    "constructor-super": "error",
+    "no-invalid-this": "error",
+    "no-restricted-syntax": ["error", "ForInStatement"],
+    "use-isnan": "error",
+    "no-unused-vars": "off",
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+
+    // typescript-eslint
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "args": "after-used",
+        "ignoreRestSiblings": true,
+        "vars": "all",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "@typescript-eslint/no-namespace": [
+      "error",
+      { "allowDeclarations": true, "allowDefinitionFiles": true }
+    ],
+    "@typescript-eslint/await-thenable": "error",
+    "@typescript-eslint/no-floating-promises": "error",
+    "@typescript-eslint/no-misused-new": "error",
+    "@typescript-eslint/no-use-before-define": "warn",
+    "@typescript-eslint/restrict-plus-operands": "error",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-non-null-assertion": "error",
+
+    // imports
+    "import/no-default-export": "warn",
+    "import/order": ["warn", { "newlines-between": "always" }],
+
+    // sonar
+    "sonarjs/no-all-duplicated-branches": "error",
+    "sonarjs/no-element-overwrite": "error",
+    "sonarjs/no-collection-size-mischeck": "error",
+    "sonarjs/no-duplicated-branches": "error",
+    "sonarjs/no-identical-conditions": "error",
+    "sonarjs/no-identical-expressions": "error",
+
+    // react-hooks
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": [
+      "warn",
+      {
+        "additionalHooks": "useRecoilCallback"
+      }
+    ],
+
+    // react
+    "react/prop-types": "off",
+    "react/display-name": "warn",
+
+    // a11y
+    "jsx-a11y/label-has-associated-control": "off"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended",
+    "plugin:sonarjs/recommended"
+  ]
+}
