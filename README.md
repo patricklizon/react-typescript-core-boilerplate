@@ -4,15 +4,15 @@
 
 ## Table of content
 
-[Resources](#Resources)
-[Stack](#Stack)
-[Prerequisites](#Prerequisites)
-[Setup](#Setup)
-[Scripts](#Scripts)
-[Contributing](#Contributing)
-[Testing](#Testing)
-[Deployment](#Deployment)
-[Known Issues](#Known-Issues)
+- [Resources](#Resources)
+- [Stack](#Stack)
+- [Prerequisites](#Prerequisites)
+- [Setup](#Setup)
+- [Scripts](#Scripts)
+- [Contributing](#Contributing)
+- [Testing](#Testing)
+- [Deployment](#Deployment)
+- [Known Issues](#Known-Issues)
 
 ## Resources
 
@@ -79,6 +79,12 @@ Summary of defined npm scripts.
 | `fix:format` | tries to fix formatting    |
 | `fix:lint`   | tries to fix linter issues |
 
+### Other
+
+| Script        | Description                                     |
+| ------------- | ----------------------------------------------- |
+| `lint:staged` | run `fix:format` and `fix:lint` on staged files |
+
 ## Contributing
 
 ### For future yourself and other contributors
@@ -87,6 +93,6 @@ Summary of defined npm scripts.
 - If code is not clear enough or you believe it needs extra context don't hesitate to add comment explaining why or mention people involved in the decision,
 - "Always leave the code you are editing a little bit better than you found it"
 
-## Known Issuess
+## Known Issues
 
 - Hot reloading is not working

@@ -6,10 +6,12 @@
     "build": "export NODE_ENV=production; webpack --config webpack.prod.ts --progress",
     "fix:format": "npm run test:format -- --write",
     "fix:lint": "npm run lint -- --fix",
+    "postinstall": "husky install",
     "start": "webpack serve --config webpack.dev.ts --progress --mode=development",
     "test:format": "prettier --config ./.prettierrc \"src/**/*.(ts|tsx)\"",
     "test:lint": "eslint --ext=jsx,ts,tsx src",
-    "test:types": "tsc -p tsconfig.json --noEmit --skipLibCheck"
+    "test:types": "tsc -p tsconfig.json --noEmit --skipLibCheck",
+    "lint:staged": "lint-staged"
   },
   "husky": {
     "hooks": {
@@ -33,15 +35,15 @@
     "@swc/core": "^1.2.47",
     "@types/css-minimizer-webpack-plugin": "^1.1.1",
     "@types/mini-css-extract-plugin": "^1.2.2",
-    "@types/node": "^14.14.27",
+    "@types/node": "^14.14.28",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
     "@types/terser-webpack-plugin": "^5.0.2",
     "@types/webpack": "^4.41.26",
     "@types/webpack-dev-server": "^3.11.1",
     "@types/webpack-merge": "^4.1.5",
-    "@typescript-eslint/eslint-plugin": "^4.15.0",
-    "@typescript-eslint/parser": "^4.15.0",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
     "autoprefixer": "^10.2.4",
     "css-loader": "5.0.2",
     "css-minimizer-webpack-plugin": "^1.2.0",
