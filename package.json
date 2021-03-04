@@ -8,6 +8,7 @@
     "fix:lint": "npm run test:lint -- --fix",
     "postinstall": "husky install",
     "start": "webpack serve --config webpack.dev.ts --progress --mode=development",
+    "test:unit": "mocha -r @swc-node/register --watch-extensions ts,tsx \"src/**/spec.*.{ts,tsx}\"",
     "test:format": "prettier --check --config ./.prettierrc \"src/**/*.(ts|tsx)\"",
     "test:lint": "eslint --ext=jsx,ts,tsx src",
     "test:types": "tsc -p tsconfig.json --noEmit --skipLibCheck",
@@ -26,6 +27,7 @@
     "react-dom": "17.0.1"
   },
   "devDependencies": {
+    "@swc-node/register": "^1.0.5",
     "@swc/core": "^1.2.50",
     "@types/css-minimizer-webpack-plugin": "^1.1.1",
     "@types/mini-css-extract-plugin": "^1.2.2",
@@ -53,6 +55,7 @@
     "husky": "^5.1.3",
     "lint-staged": "^10.5.4",
     "mini-css-extract-plugin": "^1.3.9",
+    "mocha": "^8.3.0",
     "postcss": "^8.2.7",
     "postcss-loader": "^5.0.0",
     "prettier": "^2.2.1",
