@@ -17,6 +17,10 @@ const devConfig: Configuration = {
   },
 
   target: "web",
+  watchOptions: {
+    poll: true,
+    ignored: ["/node_modules/"],
+  },
 
   devServer: {
     contentBase: path.resolve(__dirname, "public"),
