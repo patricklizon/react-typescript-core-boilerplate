@@ -16,7 +16,6 @@
     "react": { "version": "detect" }
   },
   "plugins": [
-    "eslint-plugin-jest",
     "@typescript-eslint",
     "react-hooks",
     "react",
