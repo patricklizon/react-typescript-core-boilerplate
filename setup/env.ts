@@ -1,27 +1,31 @@
 import { JSDOM } from "jsdom";
-
-const { window } = new JSDOM("<main></main>");
-
-export { render } from "@testing-library/react";
 import fireEvent from "@testing-library/user-event";
 
-export { fireEvent as fire };
+const jsdom = new JSDOM("<!DOCTYPE html>");
 
+// TODO: Figure out how to overcome "For queries bound to document.body a global document has to be available" error
+// screen
+export { render } from "@testing-library/react";
+export { fireEvent as fire };
 export { test } from "uvu";
 export * as assert from "uvu/assert";
 
-export function setup() {
+export function setup(): void {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  global.window = window;
-  global.document = window.document;
-  global.navigator = window.navigator;
-  global.getComputedStyle = window.getComputedStyle;
+  global.window = jsdom.window;
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  global.document = jsdom.window.document;
+  global.navigator = jsdom.window.navigator;
+  global.getComputedStyle = jsdom.window.getComputedStyle;
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   global.requestAnimationFrame = null;
 }
 
-export function reset() {
-  window.document.title = "";
-  window.document.head.innerHTML = "";
-  window.document.body.innerHTML = "<main></main>";
+export function reset(): void {
+  jsdom.window.document.title = "";
+  jsdom.window.document.head.innerHTML = "";
+  jsdom.window.document.body.innerHTML = "";
 }
