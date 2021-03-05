@@ -1,6 +1,6 @@
 import React from "react";
 
-import { render, fire, expect, screen } from "../../env";
+import { render, fire, expect, screen } from "../../test-config/env";
 import { Counter } from "../../src/components/Counter";
 
 const display = () => screen.getByTestId("c.display");
