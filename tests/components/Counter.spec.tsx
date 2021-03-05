@@ -1,16 +1,16 @@
 import React from "react";
 
 import { Counter } from "../../src/components/Counter";
-import { setup, reset, render, assert, test, fire } from "../../setup/env";
+import { cleanup, render, assert, test, fire, screen } from "../../setup/env";
 
-test.before(setup);
-test.before.each(reset);
+const display = () => screen.getByTestId("c.display");
+const incrementBtn = () => screen.getByTestId("c.actions.increment");
+const decrementBtn = () => screen.getByTestId("c.actions.decrement");
+
+test.after.each(cleanup);
 
 test("increment after clicking on increment button", () => {
-  const c = render(<Counter data-testid="c" />);
-  const display = () => c.getByTestId("c.display");
-  const incrementBtn = () => c.getByTestId("c.actions.increment");
-  const decrementBtn = () => c.getByTestId("c.actions.decrement");
+  render(<Counter data-testid="c" />);
 
   assert.is(display().textContent, "0");
 
@@ -32,10 +32,7 @@ test("increment after clicking on increment button", () => {
 });
 
 test("increments and decrements with custom step", () => {
-  const c = render(<Counter data-testid="c" step={5} />);
-  const display = () => c.getByTestId("c.display");
-  const incrementBtn = () => c.getByTestId("c.actions.increment");
-  const decrementBtn = () => c.getByTestId("c.actions.decrement");
+  render(<Counter data-testid="c" step={5} />);
 
   assert.is(display().textContent, "0");
 
