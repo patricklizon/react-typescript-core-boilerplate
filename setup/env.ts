@@ -3,9 +3,7 @@ import fireEvent from "@testing-library/user-event";
 
 const jsdom = new JSDOM("<!DOCTYPE html>");
 
-// TODO: Figure out how to overcome "For queries bound to document.body a global document has to be available" error
-// screen
-export { render } from "@testing-library/react";
+export { render, screen } from "@testing-library/react";
 export { fireEvent as fire };
 export { test } from "uvu";
 export * as assert from "uvu/assert";

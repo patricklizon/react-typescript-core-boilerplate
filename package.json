@@ -11,7 +11,7 @@
     "test:format": "prettier --check --config ./.prettierrc \"src/**/*.(ts|tsx)\"",
     "test:lint": "eslint --ext=jsx,ts,tsx src",
     "test:types": "tsc -p tsconfig.json --noEmit --skipLibCheck",
-    "test:unit": "uvu -r @swc-node/register",
+    "test:unit": "uvu -r @swc-node/register -r global-jsdom/register",
     "lint:staged": "lint-staged"
   },
   "lint-staged": {
@@ -55,6 +55,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-sonarjs": "^0.6.0",
     "fork-ts-checker-webpack-plugin": "^6.1.0",
+    "global-jsdom": "^8.0.0",
     "html-webpack-plugin": "^5.1.0",
     "husky": "^5.0.9",
     "jsdom": "^16.4.0",
