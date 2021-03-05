@@ -1,0 +1,11 @@
+{
+  "diff": true,
+  "extension": ["ts", "tsx"],
+  "package": "./package.json",
+  "reporter": "spec",
+  "recursive": true,
+  "require": ["@swc-node/register", "global-jsdom/register"],
+  "slow": 51,
+  "watch-files": ["src/**/*.{ts|tsx}"],
+  "watch-ignore": ["node_modules"]
+}
