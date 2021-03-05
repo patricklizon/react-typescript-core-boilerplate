@@ -1,5 +1,7 @@
 import React, { MouseEventHandler, useState, VFC } from "react";
 
+import styles from "./Counter.module.css";
+
 export const Counter: VFC<{ step?: number; "data-testid"?: string }> = ({
   step,
   "data-testid": dataTestId = "Counter",
@@ -13,15 +15,19 @@ export const Counter: VFC<{ step?: number; "data-testid"?: string }> = ({
     setCount((c) => (action === "increment" ? (c += step) : (c -= step)));
 
   return (
-    <div>
+    <div className={styles.root}>
       <button
+        className={styles.button}
         data-testid={`${dataTestId}.actions.decrement`}
         onClick={handleClick("decrement", step)}
       >
         -
       </button>
-      <strong data-testid={`${dataTestId}.display`}>{count}</strong>
+      <strong className={styles.display} data-testid={`${dataTestId}.display`}>
+        {count}
+      </strong>
       <button
+        className={styles.button}
         data-testid={`${dataTestId}.actions.increment`}
         onClick={handleClick("increment", step)}
       >
