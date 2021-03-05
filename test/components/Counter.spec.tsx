@@ -1,16 +1,15 @@
 import React from "react";
-import { expect } from "earljs";
-import { render } from "@testing-library/react";
-import fire from "@testing-library/user-event";
 
+import { render, fire, expect, screen } from "../../env";
 import { Counter } from "../../src/components/Counter";
+
+const display = () => screen.getByTestId("c.display");
+const incrementBtn = () => screen.getByTestId("c.actions.increment");
+const decrementBtn = () => screen.getByTestId("c.actions.decrement");
 
 describe("Counter", () => {
   it("increments after clicking on increment button", () => {
-    const c = render(<Counter data-testid="c" />);
-    const display = () => c.getByTestId("c.display");
-    const incrementBtn = () => c.getByTestId("c.actions.increment");
-    const decrementBtn = () => c.getByTestId("c.actions.decrement");
+    render(<Counter data-testid="c" />);
 
     expect(display().textContent).toEqual("0");
 
@@ -32,10 +31,7 @@ describe("Counter", () => {
   });
 
   it("increments and decrements with custom step", () => {
-    const c = render(<Counter data-testid="c" step={5} />);
-    const display = () => c.getByTestId("c.display");
-    const incrementBtn = () => c.getByTestId("c.actions.increment");
-    const decrementBtn = () => c.getByTestId("c.actions.decrement");
+    render(<Counter data-testid="c" step={5} />);
 
     expect(display().textContent).toEqual("0");
 
