@@ -4,7 +4,11 @@
   "package": "./package.json",
   "reporter": "spec",
   "recursive": true,
-  "require": ["@swc-node/register", "global-jsdom/register"],
+  "require": [
+    "@swc-node/register",
+    "global-jsdom/register",
+    "mock-css-modules"
+  ],
   "watch-files": ["src/**/*.{ts|tsx}"],
   "watch-ignore": ["node_modules", "./test-config", "./assets"]
 }
