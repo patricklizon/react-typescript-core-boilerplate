@@ -5,7 +5,6 @@
   "reporter": "spec",
   "recursive": true,
   "require": ["@swc-node/register", "global-jsdom/register"],
-  "slow": 51,
   "watch-files": ["src/**/*.{ts|tsx}"],
-  "watch-ignore": ["node_modules"]
+  "watch-ignore": ["node_modules", "./test-config", "./assets"]
 }
