@@ -94,5 +94,3 @@ Summary of defined npm scripts.
 - "Always leave the code you are editing a little bit better than you found it"
 
 ## Known Issues
-
-- Hot reloading is not working
