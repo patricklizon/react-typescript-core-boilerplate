@@ -18,16 +18,13 @@ const commonConfig: Configuration = {
   module: {
     rules: [
       {
-        test: /\.svg?$/,
-        use: { loader: "raw-loader" },
+        test: /\.(mjs|js|ts|tsx)$/,
+        exclude: /(node_modules)/,
+        use: { loader: "swc-loader" },
       },
       {
-        test: /\.(mjs|js|ts|tsx)$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          // `.swcrc` can be used to configure swc
-          loader: "swc-loader",
-        },
+        test: /\.svg?$/,
+        use: { loader: "raw-loader" },
       },
     ],
   },
@@ -35,6 +32,7 @@ const commonConfig: Configuration = {
   plugins: [
     new HtmlWebpackPlugin({
       cache: true,
+      filename: "index.[contenthash].html",
       title: "hello universe",
       template: path.resolve(__dirname, "src/index.html"),
       publicPath: "/",
