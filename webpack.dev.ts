@@ -52,6 +52,7 @@ const devConfig: Configuration = {
     new ReactRefreshWebpackPlugin({
       overlay: {
         sockIntegration: "wds",
+        sockProtocol: "ws",
       },
     }),
   ],
