@@ -6,11 +6,6 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 const commonConfig: Configuration = {
   entry: path.resolve(__dirname, "src/index.tsx"),
 
-  output: {
-    path: path.resolve(__dirname, "public"),
-    filename: "[name].js",
-  },
-
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
   },
@@ -32,7 +27,7 @@ const commonConfig: Configuration = {
   plugins: [
     new HtmlWebpackPlugin({
       cache: true,
-      filename: "index.[contenthash].html",
+      filename: "index.html",
       title: "hello universe",
       template: path.resolve(__dirname, "src/index.html"),
       publicPath: "/",

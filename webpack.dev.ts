@@ -14,17 +14,8 @@ const devConfig: Configuration = {
 
   entry: path.resolve(__dirname, "src/index.tsx"),
 
-  output: {
-    path: path.resolve(__dirname, "public"),
-    filename: "[name].js",
-  },
-
-  watchOptions: {
-    poll: true,
-    ignored: ["/node_modules/"],
-  },
-
   devServer: {
+    compress: true,
     historyApiFallback: true,
     port: 3000,
     open: true,
@@ -61,7 +52,6 @@ const devConfig: Configuration = {
     new ReactRefreshWebpackPlugin({
       overlay: {
         sockIntegration: "wds",
-        sockProtocol: "ws",
       },
     }),
   ],
