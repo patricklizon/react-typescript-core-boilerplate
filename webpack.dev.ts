@@ -42,9 +42,7 @@ const devConfig: Configuration = {
           "style-loader",
           {
             loader: "css-loader",
-            options: {
-              modules: true,
-            },
+            options: { modules: true },
           },
           "postcss-loader",
         ],
@@ -61,7 +59,6 @@ const devConfig: Configuration = {
 
   plugins: [
     new ReactRefreshWebpackPlugin({
-      library: "swc",
       overlay: {
         sockIntegration: "wds",
         sockProtocol: "ws",
