@@ -11,13 +11,9 @@ const prodConfig: Configuration = {
 
   optimization: {
     minimize: true,
-
-    nodeEnv: process.env.NODE_ENV,
-
-    runtimeChunk: true,
-
     minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
-
+    nodeEnv: process.env.NODE_ENV,
+    runtimeChunk: true,
     splitChunks: {
       cacheGroups: {
         commons: {
