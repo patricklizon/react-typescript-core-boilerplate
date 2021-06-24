@@ -9,21 +9,13 @@
     "parser": {
       "syntax": "typescript",
       "tsx": true,
-      "decorators": false,
-      "dynamicImport": false
+      "decorators": false
     },
     "transform": {
       "react": {
         "throwIfNamespace": true,
         "development": false,
         "refresh": true
-      },
-      "optimizer": {
-        "globals": {
-          "vars": {
-            "__DEBUG__": "true"
-          }
-        }
       }
     }
   }
