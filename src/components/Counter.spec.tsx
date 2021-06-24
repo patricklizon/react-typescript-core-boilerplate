@@ -21,7 +21,7 @@ test("Counter has correct initial value", (t) => {
   tl.cleanup();
 });
 
-test("Counter increments value correctly", (t) => {
+test("Counter increments value", (t) => {
   const Cmp = tl.render(<Counter />);
   const increment = Cmp.getByTestId($increment);
   const display = Cmp.getByTestId($display);
@@ -36,7 +36,22 @@ test("Counter increments value correctly", (t) => {
   tl.cleanup();
 });
 
-test("Counter decrements value correctly", (t) => {
+test("Counter increments value by custom step", (t) => {
+  const step: CounterProps["step"] = 100;
+  const Cmp = tl.render(<Counter step={step} />);
+  const increment = Cmp.getByTestId($increment);
+  const display = Cmp.getByTestId($display);
+
+  fire.click(increment);
+
+  const given = display.textContent;
+  const expected = step.toString();
+
+  t.is(given, expected);
+  tl.cleanup();
+});
+
+test("Counter decrements value", (t) => {
   const Cmp = tl.render(<Counter />);
   const decrement = Cmp.getByTestId($decrement);
   const display = Cmp.getByTestId($display);
@@ -46,6 +61,21 @@ test("Counter decrements value correctly", (t) => {
 
   const given = display.textContent;
   const expected = "-2";
+
+  t.is(given, expected);
+  tl.cleanup();
+});
+
+test("Counter decrements value by custom step", (t) => {
+  const step: CounterProps["step"] = 100;
+  const Cmp = tl.render(<Counter step={step} />);
+  const decrement = Cmp.getByTestId($decrement);
+  const display = Cmp.getByTestId($display);
+
+  fire.click(decrement);
+
+  const given = display.textContent;
+  const expected = (-step).toString();
 
   t.is(given, expected);
   tl.cleanup();
