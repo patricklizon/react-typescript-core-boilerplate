@@ -1,6 +1,6 @@
 import React from "react";
 
-import { expect, fire, tl } from "../../test";
+import { expect, fireEvent, tl } from "../../test";
 
 import { Counter, CounterProps } from "./Counter";
 
@@ -25,8 +25,8 @@ describe("Counter", () => {
     const increment = Cmp.getByTestId($increment);
     const display = Cmp.getByTestId($display);
 
-    fire.click(increment);
-    fire.click(increment);
+    fireEvent.click(increment);
+    fireEvent.click(increment);
 
     const given = display.textContent;
     const expected = "2";
@@ -40,7 +40,7 @@ describe("Counter", () => {
     const increment = Cmp.getByTestId($increment);
     const display = Cmp.getByTestId($display);
 
-    fire.click(increment);
+    fireEvent.click(increment);
 
     const given = display.textContent;
     const expected = step.toString();
@@ -53,8 +53,8 @@ describe("Counter", () => {
     const decrement = Cmp.getByTestId($decrement);
     const display = Cmp.getByTestId($display);
 
-    fire.click(decrement);
-    fire.click(decrement);
+    fireEvent.click(decrement);
+    fireEvent.click(decrement);
 
     const given = display.textContent;
     const expected = "-2";
@@ -68,7 +68,7 @@ describe("Counter", () => {
     const decrement = Cmp.getByTestId($decrement);
     const display = Cmp.getByTestId($display);
 
-    fire.click(decrement);
+    fireEvent.click(decrement);
 
     const given = display.textContent;
     const expected = (-step).toString();
