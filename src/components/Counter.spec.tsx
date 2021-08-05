@@ -1,11 +1,14 @@
 import React from "react";
 
-import { render, fire, expect, screen } from "../../setup/env";
-import { Counter } from "../../src/components/Counter";
+import { render, fire, expect, screen, cleanup } from "../../test";
+
+import { Counter } from "./Counter";
 
 const display = () => screen.getByTestId("c.display");
 const incrementBtn = () => screen.getByTestId("c.actions.increment");
 const decrementBtn = () => screen.getByTestId("c.actions.decrement");
+
+afterEach(cleanup);
 
 describe("Counter", () => {
   it("increments after clicking on increment button", () => {

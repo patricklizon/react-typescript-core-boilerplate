@@ -9,6 +9,5 @@
     "global-jsdom/register",
     "mock-css-modules"
   ],
-  "watch-files": ["src/**/*.{ts|tsx}"],
-  "watch-ignore": ["node_modules", "./setup", "./assets"]
+  "watch-ignore": ["node_modules/", "setup/", "assets/"]
 }
