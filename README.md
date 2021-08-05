@@ -9,10 +9,6 @@
 - [Prerequisites](#Prerequisites)
 - [Setup](#Setup)
 - [Scripts](#Scripts)
-- [Contributing](#Contributing)
-- [Testing](#Testing)
-- [Deployment](#Deployment)
-- [Known Issues](#Known-Issues)
 
 ## Resources
 
@@ -22,6 +18,7 @@
 
 - [TypeScript](https://www.typescriptlang.org/) - typed language build on top of JavaScript,
 - [React](https://reactjs.org/) - ui library used for development,
+- [CSS modules](https://github.com/css-modules/css-modules) - scoped css
 
 ## Tools
 
@@ -30,8 +27,9 @@
 - [eslint](https://eslint.org) - static code analysis
 - [prettier](https://prettier.io) - code formatter
 - [husky](https://github.com/typicode/husky) - git hooks
-- [css-modules](https://github.com/css-modules/css-modules) - scoped css
 - [autoprefixer](https://github.com/postcss/autoprefixer) - PostCSS plugin to parse CSS and add vendor prefixes to CSS rules
+- [mocha](https://github.com/mochajs/mocha) - test runner
+- [chai](https://github.com/chaijs/chai) - assertion library
 
 ## Prerequisites
 
@@ -68,6 +66,8 @@ Summary of defined npm scripts.
 
 | Script        | Description               |
 | ------------- | ------------------------- |
+| `test`        | run unit tests            |
+| `test:watch`  | run `test` in watch mode  |
 | `test:types`  | validates TS types        |
 | `test:format` | validates code formatting |
 | `test:lint`   | validates linting rules   |
@@ -84,13 +84,3 @@ Summary of defined npm scripts.
 | Script        | Description                                     |
 | ------------- | ----------------------------------------------- |
 | `lint:staged` | run `fix:format` and `fix:lint` on staged files |
-
-## Contributing
-
-### For future yourself and other contributors
-
-- When adding `TODO` or `FIXME` comments write why something was done that way and propose solution to the problem,
-- If code is not clear enough or you believe it needs extra context don't hesitate to add comment explaining why or mention people involved in the decision,
-- "Always leave the code you are editing a little bit better than you found it"
-
-## Known Issues
