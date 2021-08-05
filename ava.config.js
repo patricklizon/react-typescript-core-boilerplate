@@ -4,5 +4,5 @@ export default {
   extensions: ["ts", "tsx"],
   failFast: true,
   failWithoutAssertions: false,
-  require: ["global-jsdom/register", "@swc-node/register"],
+  require: ["@swc-node/register", "global-jsdom/register", "mock-css-modules"],
 };

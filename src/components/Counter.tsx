@@ -1,5 +1,7 @@
 import React from "react";
 
+import styles from "./Counter.module.css";
+
 export type CounterProps = {
   value?: number;
   step?: number;
@@ -17,12 +19,22 @@ export const Counter: React.VFC<CounterProps> = ({
   const increment = () => setCount((ps) => (ps += step));
 
   return (
-    <div data-testid={dataTestId}>
-      <button onClick={decrement} data-testid={`${dataTestId}.decrement`}>
+    <div data-testid={dataTestId} className={styles.root}>
+      <button
+        onClick={decrement}
+        className={styles.button}
+        data-testid={`${dataTestId}.decrement`}
+      >
         -
       </button>
-      <span data-testid={`${dataTestId}.display`}>{count}</span>
-      <button onClick={increment} data-testid={`${dataTestId}.increment`}>
+      <span data-testid={`${dataTestId}.display`} className={styles.display}>
+        {count}
+      </span>
+      <button
+        onClick={increment}
+        className={styles.button}
+        data-testid={`${dataTestId}.increment`}
+      >
         +
       </button>
     </div>
