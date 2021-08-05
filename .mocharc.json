@@ -1,0 +1,13 @@
+{
+  "diff": true,
+  "extension": ["ts", "tsx"],
+  "package": "./package.json",
+  "reporter": "spec",
+  "recursive": true,
+  "require": [
+    "@swc-node/register",
+    "global-jsdom/register",
+    "mock-css-modules"
+  ],
+  "watch-ignore": ["node_modules/", "setup/", "assets/"]
+}

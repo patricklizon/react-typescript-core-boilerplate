@@ -71,8 +71,8 @@
 
     /* Advanced Options */
     "skipLibCheck": true /* Skip type checking of declaration files. */,
-    "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
+    "forceConsistentCasingInFileNames": true /* Distest-config/env.tsconsistently-cased references to the same file. */
   },
-  "include": ["./src", "webpack*.ts"],
+  "include": ["./src", "./webpack*.ts", "./test"],
   "exclude": ["node_modules/"]
 }

@@ -1,0 +1,14 @@
+.root {
+  display: flex;
+  padding: 10px;
+}
+
+.display {
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  cursor: pointer;
+}
