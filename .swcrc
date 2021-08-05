@@ -2,6 +2,9 @@
   "env": {
     "coreJs": 3
   },
+  "test": ".*.ts?x$",
+  "exclude": [".*.js$", ".*.map$"],
+  "sourceMaps": true,
   "jsc": {
     "parser": {
       "syntax": "typescript",
@@ -11,11 +14,9 @@
     },
     "transform": {
       "react": {
-        "pragma": "React.createElement",
-        "pragmaFrag": "React.Fragment",
         "throwIfNamespace": true,
         "development": false,
-        "useBuiltins": false
+        "refresh": true
       },
       "optimizer": {
         "globals": {

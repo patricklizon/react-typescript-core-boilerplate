@@ -2,6 +2,7 @@
 .env
 
 # Build
+dist/
 public/
 
 # Logs

@@ -70,12 +70,7 @@
 
     // react-hooks
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": [
-      "warn",
-      {
-        "additionalHooks": "useRecoilCallback"
-      }
-    ],
+    "react-hooks/exhaustive-deps": "warn",
 
     // react
     "react/prop-types": "off",

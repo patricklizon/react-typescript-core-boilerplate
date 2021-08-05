@@ -3,32 +3,24 @@ import path from "path";
 import merge from "webpack-merge";
 import { Configuration as WebpackConfig } from "webpack";
 import { Configuration as WebpackDevServerConfig } from "webpack-dev-server";
-import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
+import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 
 import commonConfig from "./webpack.common";
 
-type Configuration = WebpackConfig & WebpackDevServerConfig;
+type Configuration = WebpackConfig & { devServer: WebpackDevServerConfig };
 
 const devConfig: Configuration = {
-  entry: path.resolve(__dirname, "src/index.tsx"),
-  output: {
-    path: path.resolve(__dirname, "public"),
-    filename: "[name].js",
-  },
+  mode: "development",
 
-  target: "web",
-  watchOptions: {
-    poll: true,
-    ignored: ["/node_modules/"],
-  },
+  entry: path.resolve(__dirname, "src/index.tsx"),
 
   devServer: {
-    contentBase: path.resolve(__dirname, "public"),
-    injectClient: false,
+    compress: true,
     historyApiFallback: true,
     port: 3000,
-    hot: true,
     open: true,
+    hot: true,
+    liveReload: false,
   },
 
   devtool: "cheap-module-source-map",
@@ -41,9 +33,7 @@ const devConfig: Configuration = {
           "style-loader",
           {
             loader: "css-loader",
-            options: {
-              modules: true,
-            },
+            options: { modules: true },
           },
           "postcss-loader",
         ],
@@ -58,7 +48,14 @@ const devConfig: Configuration = {
     ],
   },
 
-  plugins: [new ForkTsCheckerWebpackPlugin()],
+  plugins: [
+    new ReactRefreshWebpackPlugin({
+      overlay: {
+        sockIntegration: "wds",
+        sockProtocol: "ws",
+      },
+    }),
+  ],
 };
 
 // eslint-disable-next-line import/no-default-export
