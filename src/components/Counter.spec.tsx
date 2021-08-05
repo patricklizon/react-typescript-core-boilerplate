@@ -1,49 +1,78 @@
 import React from "react";
 
-import { render, fire, expect, screen, cleanup } from "../../test";
+import { expect, fire, tl } from "../../test";
 
-import { Counter } from "./Counter";
+import { Counter, CounterProps } from "./Counter";
 
-const display = () => screen.getByTestId("c.display");
-const incrementBtn = () => screen.getByTestId("c.actions.increment");
-const decrementBtn = () => screen.getByTestId("c.actions.decrement");
+const $increment = "Counter.increment";
+const $decrement = "Counter.decrement";
+const $display = "Counter.display";
 
-afterEach(cleanup);
+afterEach(tl.cleanup);
 
 describe("Counter", () => {
-  it("increments after clicking on increment button", () => {
-    render(<Counter data-testid="c" />);
+  it("has correct initial value", () => {
+    const initialValue: CounterProps["value"] = 100;
+    const Cmp = tl.render(<Counter value={initialValue} />);
+    const given = Cmp.getByTestId($display).textContent;
+    const expected = initialValue.toString();
 
-    expect(display().textContent).toEqual("0");
-
-    fire.click(incrementBtn());
-
-    expect(display().textContent).toEqual("1");
-
-    fire.click(incrementBtn());
-
-    expect(display().textContent).toEqual("2");
-
-    fire.click(decrementBtn());
-
-    expect(display().textContent).toEqual("1");
-
-    fire.click(decrementBtn());
-
-    expect(display().textContent).toEqual("0");
+    expect(given).to.equal(expected);
   });
 
-  it("increments and decrements with custom step", () => {
-    render(<Counter data-testid="c" step={5} />);
+  it("increments value", () => {
+    const Cmp = tl.render(<Counter />);
+    const increment = Cmp.getByTestId($increment);
+    const display = Cmp.getByTestId($display);
 
-    expect(display().textContent).toEqual("0");
+    fire.click(increment);
+    fire.click(increment);
 
-    fire.click(incrementBtn());
+    const given = display.textContent;
+    const expected = "2";
 
-    expect(display().textContent).toEqual("5");
+    expect(given).to.equal(expected);
+  });
 
-    fire.click(decrementBtn());
+  it("increments value by custom step", () => {
+    const step: CounterProps["step"] = 100;
+    const Cmp = tl.render(<Counter step={step} />);
+    const increment = Cmp.getByTestId($increment);
+    const display = Cmp.getByTestId($display);
 
-    expect(display().textContent).toEqual("0");
+    fire.click(increment);
+
+    const given = display.textContent;
+    const expected = step.toString();
+
+    expect(given).to.equal(expected);
+  });
+
+  it("decrements value", () => {
+    const Cmp = tl.render(<Counter />);
+    const decrement = Cmp.getByTestId($decrement);
+    const display = Cmp.getByTestId($display);
+
+    fire.click(decrement);
+    fire.click(decrement);
+
+    const given = display.textContent;
+    const expected = "-2";
+
+    expect(given).to.equal(expected);
+  });
+
+  it("decrements value by custom step", () => {
+    const step: CounterProps["step"] = 100;
+    const Cmp = tl.render(<Counter step={step} />);
+    const decrement = Cmp.getByTestId($decrement);
+    const display = Cmp.getByTestId($display);
+
+    fire.click(decrement);
+
+    const given = display.textContent;
+    const expected = (-step).toString();
+
+    expect(given).to.equal(expected);
   });
 });
