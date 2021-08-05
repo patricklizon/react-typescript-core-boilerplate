@@ -4,20 +4,20 @@ import { expect, fireEvent, tl } from "../../test";
 
 import { Counter, CounterProps } from "./Counter";
 
-const $increment = "Counter.increment";
-const $decrement = "Counter.decrement";
-const $display = "Counter.display";
-
-afterEach(tl.cleanup);
-
 describe("Counter", () => {
+  const $increment = "Counter.increment";
+  const $decrement = "Counter.decrement";
+  const $display = "Counter.display";
+
+  afterEach(tl.cleanup);
+
   it("has correct initial value", () => {
     const initialValue: CounterProps["value"] = 100;
     const Cmp = tl.render(<Counter value={initialValue} />);
-    const given = Cmp.getByTestId($display).textContent;
+    const actual = Cmp.getByTestId($display).textContent;
     const expected = initialValue.toString();
 
-    expect(given).to.equal(expected);
+    expect(actual).to.equal(expected);
   });
 
   it("increments value", () => {
@@ -28,10 +28,10 @@ describe("Counter", () => {
     fireEvent.click(increment);
     fireEvent.click(increment);
 
-    const given = display.textContent;
+    const actual = display.textContent;
     const expected = "2";
 
-    expect(given).to.equal(expected);
+    expect(actual).to.equal(expected);
   });
 
   it("increments value by custom step", () => {
@@ -42,10 +42,10 @@ describe("Counter", () => {
 
     fireEvent.click(increment);
 
-    const given = display.textContent;
+    const actual = display.textContent;
     const expected = step.toString();
 
-    expect(given).to.equal(expected);
+    expect(actual).to.equal(expected);
   });
 
   it("decrements value", () => {
@@ -56,10 +56,10 @@ describe("Counter", () => {
     fireEvent.click(decrement);
     fireEvent.click(decrement);
 
-    const given = display.textContent;
+    const actual = display.textContent;
     const expected = "-2";
 
-    expect(given).to.equal(expected);
+    expect(actual).to.equal(expected);
   });
 
   it("decrements value by custom step", () => {
@@ -70,9 +70,9 @@ describe("Counter", () => {
 
     fireEvent.click(decrement);
 
-    const given = display.textContent;
+    const actual = display.textContent;
     const expected = (-step).toString();
 
-    expect(given).to.equal(expected);
+    expect(actual).to.equal(expected);
   });
 });
