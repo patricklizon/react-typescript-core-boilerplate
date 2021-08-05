@@ -1,5 +1,3 @@
-import "global-jsdom/register";
-
 import React from "react";
 import test from "ava";
 

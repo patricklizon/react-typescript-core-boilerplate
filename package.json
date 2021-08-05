@@ -12,7 +12,7 @@
     "test:format": "prettier --check --config ./.prettierrc \"src/**/*.(ts|tsx)\"",
     "test:lint": "eslint --ext=ts,tsx src",
     "test:types": "tsc -p tsconfig.json --noEmit --skipLibCheck",
-    "test": "ava --verbose",
+    "test": "ava",
     "test:watch": "npm run test -- --watch",
     "lint:staged": "lint-staged"
   },

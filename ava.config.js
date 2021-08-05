@@ -4,5 +4,5 @@ export default {
   extensions: ["ts", "tsx"],
   failFast: true,
   failWithoutAssertions: false,
-  require: ["@swc-node/register"],
+  require: ["global-jsdom/register", "@swc-node/register"],
 };
