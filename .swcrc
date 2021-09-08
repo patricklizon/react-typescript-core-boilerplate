@@ -2,8 +2,10 @@
   "env": {
     "coreJs": 3
   },
-  "test": ".*.ts?x$",
-  "exclude": [".*.js$", ".*.map$"],
+  "exclude": [
+    ".*.js$",
+    ".*.map$"
+  ],
   "sourceMaps": true,
   "jsc": {
     "parser": {
