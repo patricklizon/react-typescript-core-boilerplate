@@ -48,14 +48,7 @@ const devConfig: Configuration = {
     ],
   },
 
-  plugins: [
-    new ReactRefreshWebpackPlugin({
-      overlay: {
-        sockIntegration: "wds",
-        sockProtocol: "ws",
-      },
-    }),
-  ],
+  plugins: [new ReactRefreshWebpackPlugin()],
 };
 
 // eslint-disable-next-line import/no-default-export
