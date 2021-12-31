@@ -12,8 +12,8 @@
     "test:watch": "npm run test -- --watch --reporter=min",
     "test:format": "prettier --check --config ./.prettierrc \"src/**/*.(ts|tsx)\"",
     "test:lint": "eslint --ext=ts,tsx src",
-    "test:types": "tsc -p tsconfig.json --noEmit --skipLibCheck",
-    "lint:staged": "lint-staged"
+    "test:lint-staged": "lint-staged",
+    "test:types": "tsc -p tsconfig.json --noEmit --skipLibCheck"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
