@@ -1,4 +1,4 @@
-import { expect, fireEvent, tl } from "../../test";
+import { expect, fireEvent, tl } from "@test";
 
 import { Counter, CounterProps } from "./Counter";
 

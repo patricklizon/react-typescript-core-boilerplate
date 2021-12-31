@@ -5,6 +5,11 @@
   "exclude": [".*.js$", ".*.map$"],
   "sourceMaps": true,
   "jsc": {
+    "baseUrl": "./",
+    "paths": {
+      "@test": ["test/index"],
+      "@components/*": ["src/components/*"]
+    },
     "parser": {
       "syntax": "typescript",
       "tsx": true,

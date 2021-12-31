@@ -1,7 +1,8 @@
 import "./reset.css";
 import "./app.css";
+import { Counter } from "@components/Counter";
+
 import styles from "./app.module.css";
-import { Counter } from "./components/Counter";
 
 export function App(): JSX.Element {
   return (
