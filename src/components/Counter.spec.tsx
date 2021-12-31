@@ -7,8 +7,6 @@ describe(Counter.name, () => {
   const $decrement = "Counter.decrement";
   const $display = "Counter.display";
 
-  afterEach(tl.cleanup);
-
   context("when initialized", () => {
     it("has correct default value", () => {
       const Cmp = tl.render(<Counter />);
