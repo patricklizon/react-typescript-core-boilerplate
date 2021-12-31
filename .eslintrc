@@ -31,6 +31,7 @@
     "use-isnan": "error",
     "no-unused-vars": "off",
     "no-console": ["error", { "allow": ["warn", "error"] }],
+    "no-shadow": "error",
 
     // typescript-eslint
     "@typescript-eslint/no-unused-vars": [
@@ -47,17 +48,23 @@
       { "allowDeclarations": true, "allowDefinitionFiles": true }
     ],
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/no-floating-promises": "error",
+    "@typescript-eslint/no-floating-promises": "warn",
     "@typescript-eslint/no-misused-new": "error",
     "@typescript-eslint/restrict-plus-operands": "error",
     "@typescript-eslint/no-explicit-any": "warn",
     "@typescript-eslint/no-unsafe-member-access": "off",
-    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-assignment": "error",
     "@typescript-eslint/no-non-null-assertion": "error",
 
     // imports
     "import/no-default-export": "warn",
-    "import/order": ["warn", { "newlines-between": "always" }],
+    "import/order": [
+      "warn",
+      {
+        "newlines-between": "always",
+        "alphabetize": { "order": "asc", "caseInsensitive": true }
+      }
+    ],
 
     // sonar
     "sonarjs/no-all-duplicated-branches": "error",
