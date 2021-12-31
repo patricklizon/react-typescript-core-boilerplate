@@ -13,9 +13,10 @@
     },
     "transform": {
       "react": {
-        "throwIfNamespace": true,
         "development": false,
-        "refresh": true
+        "refresh": true,
+        "runtime": "automatic",
+        "throwIfNamespace": true
       },
       "optimizer": {
         "globals": {

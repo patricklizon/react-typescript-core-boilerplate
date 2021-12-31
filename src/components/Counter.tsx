@@ -1,4 +1,4 @@
-import React from "react";
+import { useCallback, useState } from "react";
 
 import styles from "./Counter.module.css";
 
@@ -8,15 +8,15 @@ export type CounterProps = {
   "data-testid"?: string;
 };
 
-export const Counter: React.VFC<CounterProps> = ({
+export function Counter({
   "data-testid": dataTestId = "Counter",
   value = 0,
   step = 1,
-}) => {
-  const [count, setCount] = React.useState(value);
+}: CounterProps): JSX.Element {
+  const [count, setCount] = useState(value);
 
-  const decrement = () => setCount((ps) => (ps -= step));
-  const increment = () => setCount((ps) => (ps += step));
+  const decrement = useCallback(() => setCount((ps) => (ps -= step)), [step]);
+  const increment = useCallback(() => setCount((ps) => (ps += step)), [step]);
 
   return (
     <div data-testid={dataTestId} className={styles.root}>
@@ -39,4 +39,4 @@ export const Counter: React.VFC<CounterProps> = ({
       </button>
     </div>
   );
-};
+}

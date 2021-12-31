@@ -1,15 +1,13 @@
-import React from "react";
-
 import "./reset.css";
 import "./app.css";
 import styles from "./app.module.css";
 import { Counter } from "./components/Counter";
 
-export const App: React.VFC = () => {
+export function App(): JSX.Element {
   return (
-    <div className={styles.container}>
+    <div className={styles.layout}>
       <div>hello universe!</div>
       <Counter />
     </div>
   );
-};
+}
