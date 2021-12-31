@@ -4,36 +4,15 @@
 
 ## Table of content
 
-- [Resources](#Resources)
-- [Stack](#Stack)
 - [Prerequisites](#Prerequisites)
 - [Setup](#Setup)
+- [Resources](#Resources)
+- [Stack](#Stack)
 - [Scripts](#Scripts)
-
-## Resources
-
-< section description >
-
-## Stack
-
-- [TypeScript](https://www.typescriptlang.org/) - typed language build on top of JavaScript,
-- [React](https://reactjs.org/) - ui library used for development,
-- [CSS modules](https://github.com/css-modules/css-modules) - scoped css
-
-## Tools
-
-- [webpack](https://webpack.js.org) - bundler
-- [swc](https://swc.rs) - javascript / typescript compiler
-- [eslint](https://eslint.org) - static code analysis
-- [prettier](https://prettier.io) - code formatter
-- [husky](https://github.com/typicode/husky) - git hooks
-- [autoprefixer](https://github.com/postcss/autoprefixer) - PostCSS plugin to parse CSS and add vendor prefixes to CSS rules
-- [mocha](https://github.com/mochajs/mocha) - test runner
-- [chai](https://github.com/chaijs/chai) - assertion library
 
 ## Prerequisites
 
-- [Node](https://nodejs.org/en/) - version specified in [.node-version](/.node-version) file.
+- [Node](https://nodejs.org/en/) - version specified in [.nvmrc](/.nvmrc) file.
 - [npm](https://www.npmjs.com/) - usually comes with node.
 
 _It's recommended to use node version manger (ie. [fnm](https://github.com/Schniz/fnm)), for easier switching between different projects._
@@ -51,9 +30,38 @@ npm ci
 npm start
 ```
 
+## Resources
+
+< section description >
+
+## Stack
+
+### Frontend
+
+- [TypeScript](https://www.typescriptlang.org/) - typed language build on top of JavaScript,
+- [React](https://reactjs.org/) - ui library used for development,
+- [CSS modules](https://github.com/css-modules/css-modules) - scoped css
+
+### Tools
+
+- [webpack](https://webpack.js.org) - bundler
+- [swc](https://swc.rs) - javascript / typescript compiler
+- [eslint](https://eslint.org) - static code analysis
+- [prettier](https://prettier.io) - code formatter
+- [husky](https://github.com/typicode/husky) - git hooks
+- [autoprefixer](https://github.com/postcss/autoprefixer) - PostCSS plugin to parse CSS and add vendor prefixes to CSS rules
+
+### Testing
+
+- [mocha](https://github.com/mochajs/mocha) - test runner
+- [chai](https://github.com/chaijs/chai) - assertion library
+- [sinon](https://github.com/sinonjs/sinon) - test spies, stubs and mocks
+- [testing-library](https://testing-library.com/docs/react-testing-library/intro) - testing utilities
+- [user-event](https://testing-library.com/docs/ecosystem-user-event/) - more advanced simulation of browser interactions
+
 ## Scripts
 
-Summary of defined npm scripts.
+Summary of npm scripts.
 
 ### General
 
