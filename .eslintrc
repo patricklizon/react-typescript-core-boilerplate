@@ -22,6 +22,16 @@
     "eslint-plugin-import",
     "sonarjs"
   ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:sonarjs/recommended"
+  ],
   "rules": {
     // basics
     "spaced-comment": ["warn", "always"],
@@ -84,15 +94,5 @@
 
     // a11y
     "jsx-a11y/label-has-associated-control": "off"
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:jsx-a11y/recommended",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:sonarjs/recommended"
-  ]
+  }
 }
