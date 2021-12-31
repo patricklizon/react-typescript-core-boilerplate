@@ -2,7 +2,6 @@
   "diff": true,
   "extension": ["ts", "tsx"],
   "package": "./package.json",
-  "reporter": "min",
   "recursive": true,
   "require": [
     "@swc-node/register",
