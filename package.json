@@ -8,7 +8,7 @@
     "fix:lint": "npm run test:lint -- --fix",
     "postinstall": "husky install",
     "start": "webpack serve --config webpack.dev.ts --progress --mode=development",
-    "test": "mocha --config .mocharc.json -r tsconfig-paths/register \"test/**/*.ts\" src/**/* --exit",
+    "test": "mocha --config .mocharc.json src/**/* --exit",
     "test:watch": "npm run test -- --watch --reporter=min",
     "test:format": "prettier --check --config ./.prettierrc \"src/**/*.(ts|tsx)\"",
     "test:lint": "eslint --ext=ts,tsx src",

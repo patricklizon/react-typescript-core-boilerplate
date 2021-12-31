@@ -6,7 +6,8 @@
   "require": [
     "@swc-node/register",
     "global-jsdom/register",
-    "mock-css-modules"
+    "mock-css-modules",
+    "tsconfig-paths/register"
   ],
   "watch-ignore": ["node_modules/", "test/", "assets/"]
 }
