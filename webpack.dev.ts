@@ -1,9 +1,9 @@
 import path from "path";
 
-import merge from "webpack-merge";
+import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 import { Configuration as WebpackConfig } from "webpack";
 import { Configuration as WebpackDevServerConfig } from "webpack-dev-server";
-import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
+import merge from "webpack-merge";
 
 import commonConfig from "./webpack.common";
 

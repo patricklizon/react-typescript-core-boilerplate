@@ -1,8 +1,8 @@
-import merge from "webpack-merge";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import TerserPlugin from "terser-webpack-plugin";
 import { Configuration } from "webpack";
+import merge from "webpack-merge";
 
 import commonConfig from "./webpack.common";
 
