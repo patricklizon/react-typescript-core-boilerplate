@@ -1,2 +1,3 @@
+test/
 ./postcss.config.js
 ./test/cleanup-after-each.js

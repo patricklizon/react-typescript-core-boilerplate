@@ -8,12 +8,16 @@
     "fix:lint": "npm run test:lint -- --fix",
     "postinstall": "husky install",
     "start": "webpack serve --config webpack.dev.ts --progress --mode=development",
-    "test": "mocha --config .mocharc.json src/**/* --exit",
+    "test": "mocha --config .mocharc.json \"src/**/*.spec.{ts,tsx}\"",
     "test:watch": "npm run test -- --watch --reporter=min -r \"./test/cleanup-after-each.js\"",
     "test:format": "prettier --check --config ./.prettierrc \"src/**/*.(ts|tsx)\"",
     "test:lint": "eslint --ext=ts,tsx src",
     "test:lint-staged": "lint-staged",
     "test:types": "tsc -p tsconfig.json --noEmit --skipLibCheck"
+  },
+  "engines": {
+    "node": ">=16.13.0",
+    "npm": ">=8.1.0"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
@@ -63,6 +67,7 @@
     "global-jsdom": "^8.4.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^7.0.4",
+    "jsdom": "^19.0.0",
     "lint-staged": "^12.1.4",
     "mini-css-extract-plugin": "^2.4.5",
     "mocha": "^9.1.3",

@@ -1,6 +1,6 @@
 {
   "diff": true,
-  "extension": ["ts", "tsx"],
+  "extension": ["spec.ts", "spec.tsx"],
   "package": "./package.json",
   "recursive": true,
   "require": [
