@@ -39,6 +39,11 @@
     "no-invalid-this": "error",
     "no-restricted-syntax": ["error", "ForInStatement"],
     "use-isnan": "error",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      { "functions": false }
+    ],
     "no-unused-vars": "off",
     "no-console": ["error", { "allow": ["warn", "error"] }],
     "no-shadow": "error",
