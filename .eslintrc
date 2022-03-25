@@ -1,6 +1,7 @@
 {
   "parser": "@typescript-eslint/parser",
   "env": {
+    "jest": true,
     "browser": true,
     "es6": true
   },
@@ -39,14 +40,11 @@
     "no-invalid-this": "error",
     "no-restricted-syntax": ["error", "ForInStatement"],
     "use-isnan": "error",
-    "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": [
-      "error",
-      { "functions": false }
-    ],
-    "no-unused-vars": "off",
     "no-console": ["error", { "allow": ["warn", "error"] }],
+    "no-empty-function": "off",
     "no-shadow": "error",
+    "no-unused-vars": "off",
+    "no-prototype-builtins": "error",
 
     // typescript-eslint
     "@typescript-eslint/no-unused-vars": [
@@ -63,13 +61,30 @@
       { "allowDeclarations": true, "allowDefinitionFiles": true }
     ],
     "@typescript-eslint/await-thenable": "error",
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      {
+        "allowExpressions": true,
+        "allowTypedFunctionExpressions": true,
+        "allowHigherOrderFunctions": true,
+        "allowConciseArrowFunctionExpressionsStartingWithVoid": true
+      }
+    ],
+    "@typescript-eslint/no-empty-function": "error",
+    "@typescript-eslint/no-explicit-any": "warn",
     "@typescript-eslint/no-floating-promises": "warn",
     "@typescript-eslint/no-misused-new": "error",
-    "@typescript-eslint/restrict-plus-operands": "error",
-    "@typescript-eslint/no-explicit-any": "warn",
-    "@typescript-eslint/no-unsafe-member-access": "off",
-    "@typescript-eslint/no-unsafe-assignment": "error",
     "@typescript-eslint/no-non-null-assertion": "error",
+    "@typescript-eslint/no-unsafe-assignment": "error",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/restrict-plus-operands": "error",
+    "@typescript-eslint/restrict-template-expressions": [
+      "error",
+      {
+        "allowNumber": true,
+        "allowBoolean": true
+      }
+    ],
 
     // imports
     "import/no-default-export": "warn",
@@ -82,16 +97,17 @@
     ],
 
     // sonar
-    "sonarjs/no-all-duplicated-branches": "error",
-    "sonarjs/no-element-overwrite": "error",
-    "sonarjs/no-collection-size-mischeck": "error",
-    "sonarjs/no-duplicated-branches": "error",
-    "sonarjs/no-identical-conditions": "error",
-    "sonarjs/no-identical-expressions": "error",
+    "sonarjs/elseif-without-else": "error",
+    "sonarjs/no-inverted-boolean-check": "error",
 
     // react-hooks
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/exhaustive-deps": [
+      "warn",
+      {
+        "additionalHooks": "useRecoilCallback"
+      }
+    ],
 
     // react
     "react/prop-types": "off",
@@ -99,5 +115,13 @@
 
     // a11y
     "jsx-a11y/label-has-associated-control": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["src/utils/*.ts"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    }
+  ]
 }
