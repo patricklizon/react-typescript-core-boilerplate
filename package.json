@@ -34,7 +34,7 @@
   "devDependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.4",
     "@swc-node/register": "^1.4.2",
-    "@swc/core": "^1.2.124",
+    "@swc/core": "^1.2.160",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "@types/chai": "^4.3.0",
