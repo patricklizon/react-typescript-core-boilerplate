@@ -1,7 +1,7 @@
 import path from "path";
 
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import { Configuration } from "webpack";
+import type { Configuration } from "webpack";
 
 const commonConfig: Configuration = {
   entry: path.resolve(__dirname, "src/index.tsx"),

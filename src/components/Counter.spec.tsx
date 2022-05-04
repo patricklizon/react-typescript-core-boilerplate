@@ -1,17 +1,14 @@
-import { expect, fireEvent } from "@test";
-import { render } from "@testing-library/react";
+import { expect, userEvent } from "@test";
+import { render, screen } from "@testing-library/react";
 
-import { Counter, CounterProps } from "./Counter";
+import { Counter, type CounterProps } from "./Counter";
 
 describe(Counter.name, () => {
-  const $increment = "Counter.increment";
-  const $decrement = "Counter.decrement";
-  const $display = "Counter.display";
-
   describe("when initialized", () => {
     it("has correct default value", () => {
-      const Cmp = render(<Counter />);
-      const actual = Cmp.getByTestId($display).textContent;
+      render(<Counter />);
+
+      const actual = $display().textContent;
       const expected = "0";
 
       expect(actual).to.equal(expected);
@@ -19,8 +16,9 @@ describe(Counter.name, () => {
 
     it("has correct custom value", () => {
       const initialValue: CounterProps["value"] = 100;
-      const Cmp = render(<Counter value={initialValue} />);
-      const actual = Cmp.getByTestId($display).textContent;
+      render(<Counter value={initialValue} />);
+
+      const actual = $display().textContent;
       const expected = initialValue.toString();
 
       expect(actual).to.equal(expected);
@@ -28,29 +26,27 @@ describe(Counter.name, () => {
   });
 
   describe("when pressing increment button", () => {
-    it("changes value by default step", () => {
-      const Cmp = render(<Counter />);
-      const increment = Cmp.getByTestId($increment);
-      const display = Cmp.getByTestId($display);
+    it("changes value by default step", async () => {
+      const user = userEvent.setup();
+      render(<Counter />);
 
-      fireEvent.click(increment);
-      fireEvent.click(increment);
+      await user.click($increment());
+      await user.click($increment());
 
-      const actual = display.textContent;
+      const actual = $display().textContent;
       const expected = "2";
 
       expect(actual).to.equal(expected);
     });
 
-    it("changes value by custom step", () => {
+    it("changes value by custom step", async () => {
+      const user = userEvent.setup();
       const step: CounterProps["step"] = 100;
-      const Cmp = render(<Counter step={step} />);
-      const increment = Cmp.getByTestId($increment);
-      const display = Cmp.getByTestId($display);
+      render(<Counter step={step} />);
 
-      fireEvent.click(increment);
+      await user.click($increment());
 
-      const actual = display.textContent;
+      const actual = $display().textContent;
       const expected = step.toString();
 
       expect(actual).to.equal(expected);
@@ -58,32 +54,42 @@ describe(Counter.name, () => {
   });
 
   describe("when pressing decrement button", () => {
-    it("changes value by default step", () => {
-      const Cmp = render(<Counter />);
-      const decrement = Cmp.getByTestId($decrement);
-      const display = Cmp.getByTestId($display);
+    it("changes value by default step", async () => {
+      const user = userEvent.setup();
+      render(<Counter />);
 
-      fireEvent.click(decrement);
-      fireEvent.click(decrement);
+      await user.click($decrement());
+      await user.click($decrement());
 
-      const actual = display.textContent;
+      const actual = $display().textContent;
       const expected = "-2";
 
       expect(actual).to.equal(expected);
     });
 
-    it("changes value by custom step", () => {
+    it("changes value by custom step", async () => {
       const step: CounterProps["step"] = 100;
-      const Cmp = render(<Counter step={step} />);
-      const decrement = Cmp.getByTestId($decrement);
-      const display = Cmp.getByTestId($display);
+      const user = userEvent.setup();
+      render(<Counter step={step} />);
 
-      fireEvent.click(decrement);
+      await user.click($decrement());
 
-      const actual = display.textContent;
+      const actual = $display().textContent;
       const expected = (-step).toString();
 
       expect(actual).to.equal(expected);
     });
   });
 });
+
+function $display(): HTMLElement {
+  return screen.getByTestId("Counter.display");
+}
+
+function $increment(): HTMLElement {
+  return screen.getByTestId("Counter.increment");
+}
+
+function $decrement(): HTMLElement {
+  return screen.getByTestId("Counter.decrement");
+}

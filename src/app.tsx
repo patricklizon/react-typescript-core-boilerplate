@@ -1,5 +1,3 @@
-import "./reset.css";
-import "./app.css";
 import { Counter } from "@components/Counter";
 
 import styles from "./app.module.css";
