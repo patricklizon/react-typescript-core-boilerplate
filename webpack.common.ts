@@ -1,6 +1,7 @@
 import path from "path";
 
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
 import type { Configuration } from "webpack";
 
 const commonConfig: Configuration = {
@@ -8,6 +9,7 @@ const commonConfig: Configuration = {
 
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
+    plugins: [new TsconfigPathsPlugin()],
   },
 
   module: {
