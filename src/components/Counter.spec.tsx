@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 
 import { Counter, type CounterProps } from "./Counter";
 
-describe(Counter.name, () => {
+describe("#" + Counter.name, () => {
   describe("when initialized", () => {
     it("has correct default value", () => {
       render(<Counter />);

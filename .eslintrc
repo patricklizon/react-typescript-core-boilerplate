@@ -1,7 +1,6 @@
 {
   "parser": "@typescript-eslint/parser",
   "env": {
-    "jest": true,
     "browser": true,
     "es6": true
   },
@@ -18,19 +17,22 @@
   },
   "plugins": [
     "@typescript-eslint",
+    "eslint-plugin-import",
+    "jest",
     "react-hooks",
     "react",
-    "eslint-plugin-import",
     "sonarjs"
   ],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended",
+    "plugin:jest/recommended",
     "plugin:jsx-a11y/recommended",
-    "plugin:react/recommended",
     "plugin:react/jsx-runtime",
+    "plugin:react/recommended",
     "plugin:sonarjs/recommended"
   ],
   "rules": {
@@ -41,12 +43,11 @@
     "no-restricted-syntax": ["error", "ForInStatement"],
     "use-isnan": "error",
     "no-console": ["error", { "allow": ["warn", "error"] }],
-    "no-empty-function": "off",
     "no-shadow": "error",
-    "no-unused-vars": "off",
     "no-prototype-builtins": "error",
 
     // typescript-eslint
+    "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
@@ -80,6 +81,7 @@
     "@typescript-eslint/no-unnecessary-condition": "error",
     "@typescript-eslint/prefer-nullish-coalescing": "error",
     "@typescript-eslint/prefer-optional-chain": "error",
+    "no-empty-function": "off",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-floating-promises": "warn",
@@ -115,11 +117,12 @@
     "react-hooks/exhaustive-deps": "warn",
 
     // react
+    "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "react/display-name": "warn",
 
-    // a11y
-    "jsx-a11y/label-has-associated-control": "off"
+    // jest
+    "jest/valid-expect": "off"
   },
   "overrides": [
     {
