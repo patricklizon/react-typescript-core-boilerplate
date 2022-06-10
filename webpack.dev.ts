@@ -14,6 +14,10 @@ const devConfig: Configuration = {
 
   entry: path.resolve(__dirname, "src/index.tsx"),
 
+  output: {
+    publicPath: "/",
+  },
+
   devServer: {
     compress: true,
     historyApiFallback: true,
@@ -51,5 +55,4 @@ const devConfig: Configuration = {
   plugins: [new ReactRefreshWebpackPlugin()],
 };
 
-// eslint-disable-next-line import/no-default-export
 export default merge(commonConfig, devConfig);

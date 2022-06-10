@@ -125,6 +125,13 @@
     "jest/valid-expect": "off"
   },
   "overrides": [
+    // allow default export for configuration files
+    {
+      "files": ["*.[j|t]s"],
+      "rules": {
+        "import/no-default-export": "off"
+      }
+    },
     {
       "files": ["src/utils/*.ts"],
       "rules": {
