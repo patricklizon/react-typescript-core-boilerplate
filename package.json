@@ -6,7 +6,6 @@
     "build": "export NODE_ENV=production; webpack --config webpack.prod.ts --progress",
     "fix:format": "npm run test:format -- --write",
     "fix:lint": "npm run test:lint -- --fix",
-    "postinstall": "husky install",
     "start": "webpack serve --config webpack.dev.ts --progress --mode=development",
     "test": "ENV=test jest",
     "test:watch": "npm run test -- --watch",
@@ -20,6 +19,7 @@
     "npm": ">=8.1.0"
   },
   "lint-staged": {
+    "*.md": "prettier --list-different",
     "*.{ts,tsx}": [
       "prettier --config .prettierrc --write",
       "eslint --fix"
@@ -67,7 +67,6 @@
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-sonarjs": "^0.13.0",
     "html-webpack-plugin": "^5.5.0",
-    "husky": "^7.0.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
