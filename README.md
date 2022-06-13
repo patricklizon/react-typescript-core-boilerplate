@@ -48,7 +48,6 @@ npm start
 - [swc](https://swc.rs) - javascript / typescript compiler
 - [eslint](https://eslint.org) - static code analysis
 - [prettier](https://prettier.io) - code formatter
-- [husky](https://github.com/typicode/husky) - git hooks
 - [autoprefixer](https://github.com/postcss/autoprefixer) - PostCSS plugin to parse CSS and add vendor prefixes to CSS rules
 
 ### Testing
