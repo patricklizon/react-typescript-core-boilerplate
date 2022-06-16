@@ -1,0 +1,5 @@
+{
+  "entry": ["src/index.tsx"],
+  "extensions": [".ts", ".tsx"],
+  "ignorePatterns": ["**/node_modules/**", "**/*.spec.*", "**/@types/**"]
+}

@@ -10,6 +10,7 @@
     "test": "ENV=test jest",
     "test:watch": "npm run test -- --watch",
     "test:format": "prettier --check --config ./.prettierrc \"src/**/*.(ts|tsx)\"",
+    "test:imports": "unimported",
     "test:lint": "eslint --ext=ts,tsx src",
     "test:lint-staged": "lint-staged",
     "test:types": "tsc -p tsconfig.json --noEmit --skipLibCheck"
@@ -81,6 +82,7 @@
     "ts-node": "^10.8.1",
     "tsconfig-paths-webpack-plugin": "^3.5.2",
     "typescript": "^4.7.3",
+    "unimported": "^1.20.2",
     "webpack": "^5.73.0",
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.10.0",
