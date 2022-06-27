@@ -29,7 +29,6 @@
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:@typescript-eslint/recommended",
     "plugin:jest/recommended",
-    "plugin:jest/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:react/jsx-runtime",
     "plugin:react/recommended",
@@ -39,38 +38,76 @@
     // basics
     "spaced-comment": ["warn", "always"],
     "constructor-super": "error",
-    "no-invalid-this": "error",
     "no-restricted-syntax": ["error", "ForInStatement"],
     "use-isnan": "error",
     "no-console": ["error", { "allow": ["warn", "error"] }],
-    "no-shadow": "error",
     "no-prototype-builtins": "error",
 
     // typescript-eslint
+    "@typescript-eslint/prefer-ts-expect-error": "warn",
+    "@typescript-eslint/unified-signatures": "warn",
+    "@typescript-eslint/no-dynamic-delete": "warn",
+    "@typescript-eslint/consistent-type-definitions": ["warn", "type"],
+
+    "no-implied-eval": "off",
+    "@typescript-eslint/no-implied-eval": ["error"],
+    "no-unused-expressions": "error",
+    "@typescript-eslint/no-unused-expressions": ["error"],
+    "no-useless-constructor": "off",
+    "@typescript-eslint/no-useless-constructor": ["error"],
+    "no-invalid-this": "off",
+    "@typescript-eslint/no-invalid-this": ["error"],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "no-return-await": "off",
+    "@typescript-eslint/return-await": "error",
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
-        "args": "after-used",
+        "args": "all",
         "ignoreRestSiblings": true,
         "vars": "all",
-        "argsIgnorePattern": "^_"
+        "argsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_"
       }
     ],
     "@typescript-eslint/no-namespace": [
       "error",
       { "allowDeclarations": true, "allowDefinitionFiles": true }
     ],
-    "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/explicit-function-return-type": [
+    "@typescript-eslint/restrict-template-expressions": [
       "error",
       {
-        "allowExpressions": true,
-        "allowTypedFunctionExpressions": true,
-        "allowHigherOrderFunctions": true,
-        "allowConciseArrowFunctionExpressionsStartingWithVoid": true
+        "allowNumber": true,
+        "allowBoolean": true
       }
     ],
+    "@typescript-eslint/array-type": "error",
+    "@typescript-eslint/class-literal-property-style": "error",
+    "dot-notation": "off",
+    "@typescript-eslint/dot-notation": "error",
+    "@typescript-eslint/no-base-to-string": "error",
+    "@typescript-eslint/no-extraneous-class": "error",
+    "@typescript-eslint/no-invalid-void-type": "error",
+    "@typescript-eslint/no-meaningless-void-operator": "error",
+    "@typescript-eslint/no-unnecessary-type-assertion": "error",
+    "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
+    "no-throw-literal": "off",
+    "@typescript-eslint/no-throw-literal": "error",
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
+    "@typescript-eslint/no-unnecessary-type-arguments": "error",
+    "@typescript-eslint/non-nullable-type-assertion-style": "error",
+    "@typescript-eslint/prefer-for-of": "error",
+    "@typescript-eslint/prefer-function-type": "error",
+    "@typescript-eslint/prefer-includes": "error",
+    "@typescript-eslint/prefer-nullish-coalescing": "error",
+    "@typescript-eslint/prefer-optional-chain": "error",
+    "@typescript-eslint/prefer-reduce-type-parameter": "error",
+    "@typescript-eslint/prefer-return-this-type": "error",
+    "@typescript-eslint/prefer-string-starts-ends-with": "error",
+    "@typescript-eslint/no-unnecessary-condition": "error",
+    "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/consistent-type-assertions": [
       "error",
       {
@@ -78,23 +115,13 @@
         "objectLiteralTypeAssertions": "never"
       }
     ],
-    "@typescript-eslint/no-unnecessary-condition": "error",
-    "@typescript-eslint/prefer-nullish-coalescing": "error",
-    "@typescript-eslint/prefer-optional-chain": "error",
-    "no-empty-function": "off",
-    "@typescript-eslint/no-empty-function": "error",
-    "@typescript-eslint/no-explicit-any": "error",
-    "@typescript-eslint/no-floating-promises": "warn",
-    "@typescript-eslint/no-misused-new": "error",
-    "@typescript-eslint/no-non-null-assertion": "error",
-    "@typescript-eslint/no-unsafe-assignment": "error",
-    "@typescript-eslint/no-unsafe-member-access": "off",
-    "@typescript-eslint/restrict-plus-operands": "error",
-    "@typescript-eslint/restrict-template-expressions": [
+    "@typescript-eslint/explicit-function-return-type": [
       "error",
       {
-        "allowNumber": true,
-        "allowBoolean": true
+        "allowExpressions": true,
+        "allowTypedFunctionExpressions": true,
+        "allowHigherOrderFunctions": true,
+        "allowConciseArrowFunctionExpressionsStartingWithVoid": true
       }
     ],
 
