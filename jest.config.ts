@@ -13,10 +13,6 @@ const config: Config.InitialOptions = {
   moduleNameMapper: {
     "(svg)$": "<rootDir>/test/mocks/file-mock.ts",
     "(css)$": "<rootDir>/node_modules/identity-obj-proxy",
-    // TODO: Delete next line when @swc/jest fix will be available.
-    // It's a dirty workaround for issue with file resolution with multiple dots in it's name.
-    // ie. Component.module.css won't be catch by "(css)$" rule because ".module" is treated as an extension
-    "(module)$": "<rootDir>/node_modules/identity-obj-proxy",
     "^@components(.*)$": "<rootDir>/src/components$1",
     "^@constants(.*)$": "<rootDir>/src/constants$1",
     "^@test$": "<rootDir>/test/index.ts",
