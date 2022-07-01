@@ -52,9 +52,8 @@ npm start
 
 ### Testing
 
-- [mocha](https://github.com/mochajs/mocha) - test runner
+- [jest](https://jestjs.io/) - test runner
 - [chai](https://github.com/chaijs/chai) - assertion library
-- [sinon](https://github.com/sinonjs/sinon) - test spies, stubs and mocks
 - [testing-library](https://testing-library.com/docs/react-testing-library/intro) - testing utilities
 - [user-event](https://testing-library.com/docs/ecosystem-user-event/) - more advanced simulation of browser interactions
 
@@ -71,13 +70,15 @@ Summary of npm scripts.
 
 ### Test
 
-| Script        | Description               |
-| ------------- | ------------------------- |
-| `test`        | run unit tests            |
-| `test:watch`  | run `test` in watch mode  |
-| `test:types`  | validates TS types        |
-| `test:format` | validates code formatting |
-| `test:lint`   | validates linting rules   |
+| Script             | Description                                     |
+| ------------------ | ----------------------------------------------- |
+| `test`             | run unit tests                                  |
+| `test:watch`       | run `test` in watch mode                        |
+| `test:types`       | validates TS types                              |
+| `test:format`      | validates code formatting                       |
+| `test:lint`        | validates linting rules                         |
+| `test:lint-staged` | run `fix:format` and `fix:lint` on staged files |
+| `test:imports`     | checks for unimported code                      |
 
 ### Fix
 
@@ -85,9 +86,3 @@ Summary of npm scripts.
 | ------------ | -------------------------- |
 | `fix:format` | tries to fix formatting    |
 | `fix:lint`   | tries to fix linter issues |
-
-### Other
-
-| Script        | Description                                     |
-| ------------- | ----------------------------------------------- |
-| `lint:staged` | run `fix:format` and `fix:lint` on staged files |
