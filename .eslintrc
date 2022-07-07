@@ -28,6 +28,8 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
     "plugin:jest/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:react/jsx-runtime",
@@ -126,6 +128,7 @@
     ],
 
     // imports
+    "import/no-unresolved": "off", // check done by typescript
     "import/no-default-export": "warn",
     "import/order": [
       "warn",
