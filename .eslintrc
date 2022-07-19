@@ -30,6 +30,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
+
     "plugin:jest/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:react/jsx-runtime",
@@ -53,7 +54,7 @@
 
     "no-implied-eval": "off",
     "@typescript-eslint/no-implied-eval": ["error"],
-    "no-unused-expressions": "error",
+    "no-unused-expressions": "off",
     "@typescript-eslint/no-unused-expressions": ["error"],
     "no-useless-constructor": "off",
     "@typescript-eslint/no-useless-constructor": ["error"],
@@ -162,10 +163,25 @@
         "import/no-default-export": "off"
       }
     },
+    // ambient modules
+    {
+      "files": ["*.d.ts"],
+      "rules": {
+        "@typescript-eslint/consistent-type-definitions": "off",
+        "@typescript-eslint/no-empty-interface": "off"
+      }
+    },
     {
       "files": ["src/utils/*.ts"],
       "rules": {
         "@typescript-eslint/no-explicit-any": "off"
+      }
+    },
+    {
+      "files": ["**/**/*.spec.{ts,tsx}"],
+      "rules": {
+        // has to be disabled in order to use chai ie. `expect().to.be.true`
+        "@typescript-eslint/no-unused-expressions": "off"
       }
     }
   ]
