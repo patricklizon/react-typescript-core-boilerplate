@@ -6,12 +6,24 @@ import merge from "webpack-merge";
 
 import commonConfig from "./webpack.common";
 
+const isPerfEnv = process.env.NODE_ENV === "performance";
+
 const prodConfig: Configuration = {
   mode: "production",
 
   optimization: {
     minimize: true,
-    minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: isPerfEnv
+          ? {
+              keep_classnames: true,
+              keep_fnames: true,
+            }
+          : {},
+      }),
+      new CssMinimizerPlugin(),
+    ],
     nodeEnv: process.env.NODE_ENV,
     runtimeChunk: true,
     splitChunks: {
@@ -23,6 +35,15 @@ const prodConfig: Configuration = {
         },
       },
     },
+  },
+
+  resolve: {
+    alias: isPerfEnv
+      ? {
+          "react-dom$": "react-dom/profiling",
+          "scheduler/tracing": "scheduler/tracing-profiling",
+        }
+      : {},
   },
 
   module: {
@@ -37,7 +58,12 @@ const prodConfig: Configuration = {
             loader: "css-loader",
             options: {
               importLoaders: 1,
-              modules: true,
+              modules: {
+                mode: "local",
+                localIdentName: isPerfEnv
+                  ? "[name]__[local]--[hash:base64:5]"
+                  : "[hash:base64]",
+              },
             },
           },
         ],

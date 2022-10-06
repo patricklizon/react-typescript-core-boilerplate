@@ -4,16 +4,18 @@
   "description": "project description",
   "scripts": {
     "build": "export NODE_ENV=production; webpack --config webpack.prod.ts --progress",
+    "build:perf": "export NODE_ENV=performance; webpack --config webpack.prod.ts --progress",
     "fix:format": "npm run test:format -- --write",
     "fix:lint": "npm run test:lint -- --fix",
+    "serve": "serve ./dist",
     "start": "webpack serve --config webpack.dev.ts --progress --mode=development",
-    "test": "ENV=test jest",
-    "test:watch": "npm run test -- --watch",
     "test:format": "prettier --check --config ./.prettierrc \"src/**/*.(ts|tsx)\"",
     "test:imports": "unimported",
-    "test:lint": "eslint --ext=ts,tsx src",
     "test:lint-staged": "lint-staged",
-    "test:types": "tsc -p tsconfig.json --noEmit --skipLibCheck"
+    "test:lint": "eslint --ext=ts,tsx src",
+    "test:types": "tsc -p tsconfig.json --noEmit --skipLibCheck",
+    "test:watch": "npm run test -- --watch",
+    "test": "ENV=test jest"
   },
   "engines": {
     "node": ">=16.13.0",
@@ -72,6 +74,7 @@
     "prettier": "^2.7.1",
     "raw-loader": "^4.0.2",
     "react-refresh": "^0.14.0",
+    "serve": "^14.0.1",
     "style-loader": "^3.3.1",
     "swc-loader": "^0.2.3",
     "terser-webpack-plugin": "^5.3.3",
