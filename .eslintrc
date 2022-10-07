@@ -49,7 +49,6 @@
         "message": "In modern TypeScript, you may not need an enum when an object with `as const` could suffice."
       }
     ],
-    "use-isnan": "error",
     "no-console": ["error", { "allow": ["warn", "error"] }],
     "no-prototype-builtins": "error",
 
