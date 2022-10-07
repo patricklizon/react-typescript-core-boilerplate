@@ -41,7 +41,14 @@
     // basics
     "spaced-comment": ["warn", "always"],
     "constructor-super": "error",
-    "no-restricted-syntax": ["error", "ForInStatement"],
+    "no-restricted-syntax": [
+      "error",
+      "ForInStatement",
+      {
+        "selector": "TSEnumDeclaration",
+        "message": "In modern TypeScript, you may not need an enum when an object with `as const` could suffice."
+      }
+    ],
     "use-isnan": "error",
     "no-console": ["error", { "allow": ["warn", "error"] }],
     "no-prototype-builtins": "error",
