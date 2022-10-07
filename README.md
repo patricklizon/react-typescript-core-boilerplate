@@ -67,6 +67,8 @@ Summary of npm scripts.
 | ------- | ------------------------------ |
 | `start` | starts application in DEV mode |
 | `build` | builds app in PROD mode        |
+| `build:perf` | builds app in react performance debugging mode |
+| `serve` | serves build application        |
 
 ### Test
 
