@@ -19,6 +19,14 @@ const config: Config.InitialOptions = {
     "^@test/(.*)$": "<rootDir>/test/$1",
     "^root/(.*)$": "<rootDir>/$1",
   },
+  collectCoverageFrom: [
+    "src/**/*.{ts,tsx}",
+    "!src/@types/*.ts",
+    "!**/node_modules/**",
+    "!test/**",
+    "!fixtures/**",
+    "!dist/**",
+  ],
 };
 
 export default config;

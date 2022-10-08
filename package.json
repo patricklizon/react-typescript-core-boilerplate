@@ -9,6 +9,7 @@
     "fix:lint": "npm run test:lint -- --fix",
     "serve": "serve ./dist",
     "start": "webpack serve --config webpack.dev.ts --progress --mode=development",
+    "test:coverage": "npm run test -- --coverage",
     "test:format": "prettier --check --config ./.prettierrc \"src/**/*.(ts|tsx)\"",
     "test:imports": "unimported",
     "test:lint-staged": "lint-staged",
