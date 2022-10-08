@@ -23,6 +23,15 @@ describe("#" + Counter.name, () => {
 
       expect(actual).to.equal(expected);
     });
+
+    it("allows overwriting testid", () => {
+      const testId = "Custom";
+      render(<Counter data-testid={testId} />);
+
+      expect($display(testId)).not.to.throw;
+      expect($increment(testId)).not.to.throw;
+      expect($decrement(testId)).not.to.throw;
+    });
   });
 
   describe("when pressing increment button", () => {
@@ -82,14 +91,14 @@ describe("#" + Counter.name, () => {
   });
 });
 
-function $display(): HTMLElement {
-  return screen.getByTestId("Counter.display");
+function $display(c = "Counter"): HTMLElement {
+  return screen.getByTestId(`${c}.display`);
 }
 
-function $increment(): HTMLElement {
-  return screen.getByTestId("Counter.increment");
+function $increment(c = "Counter"): HTMLElement {
+  return screen.getByTestId(`${c}.increment`);
 }
 
-function $decrement(): HTMLElement {
-  return screen.getByTestId("Counter.decrement");
+function $decrement(c = "Counter"): HTMLElement {
+  return screen.getByTestId(`${c}.decrement`);
 }

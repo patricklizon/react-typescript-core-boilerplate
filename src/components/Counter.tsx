@@ -15,8 +15,8 @@ export function Counter({
 }: CounterProps): JSX.Element {
   const [count, setCount] = useState(value);
 
-  const decrement = useCallback(() => setCount((ps) => (ps -= step)), [step]);
-  const increment = useCallback(() => setCount((ps) => (ps += step)), [step]);
+  const decrement = useCallback(() => setCount((ps) => ps - step), [step]);
+  const increment = useCallback(() => setCount((ps) => ps + step), [step]);
 
   return (
     <div data-testid={dataTestId} className={styles.root}>
