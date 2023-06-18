@@ -69,7 +69,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
-    "lint-staged": "^12.3.7",
+    "lint-staged": "^13.2.2",
     "mini-css-extract-plugin": "^2.7.6",
     "mock-css-modules": "^2.0.0",
     "postcss": "^8.4.13",
