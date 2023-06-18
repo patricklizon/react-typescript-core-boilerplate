@@ -34,9 +34,9 @@
   "devDependencies": {
     "@eslint/js": "^8.43.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
-    "@swc-node/register": "^1.5.1",
-    "@swc/core": "^1.3.24",
-    "@swc/jest": "^0.2.24",
+    "@swc-node/register": "^1.6.5",
+    "@swc/core": "^1.3.64",
+    "@swc/jest": "^0.2.26",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
     "@types/chai": "^4.3.5",
