@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/swcrc",
   "env": {
-    "coreJs": 3
+    "coreJs": "3"
   },
   "exclude": [".*.js$", ".*.map$"],
   "sourceMaps": true,
