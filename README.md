@@ -4,11 +4,11 @@
 
 ## Table of content
 
-- [Prerequisites](#Prerequisites)
-- [Setup](#Setup)
-- [Resources](#Resources)
-- [Stack](#Stack)
-- [Scripts](#Scripts)
+- [Prerequisites](#prerequisites)
+- [Setup](#setup)
+- [Resources](#resources)
+- [Stack](#stack)
+- [Scripts](#scripts)
 
 ## Prerequisites
 
@@ -75,12 +75,18 @@ Summary of npm scripts.
 | Script             | Description                                     |
 | ------------------ | ----------------------------------------------- |
 | `test`             | run unit tests                                  |
-| `test:watch`       | run `test` in watch mode                        |
-| `test:types`       | validates TS types                              |
-| `test:format`      | validates code formatting                       |
-| `test:lint`        | validates linting rules                         |
-| `test:lint-staged` | run `fix:format` and `fix:lint` on staged files |
-| `test:imports`     | checks for unimported code                      |
+| `test:coverage`    | run `test` in watch mode                        |
+| `test:watch`       | run `test` and generate coverage report         |
+
+### Checks
+
+| Script             | Description                                     |
+| ------------------ | ----------------------------------------------- |
+| `check:types`       | validates TS types                              |
+| `check:format`      | validates code formatting                       |
+| `check:lint`        | validates linting rules                         |
+| `check:lint-staged` | run `fix:format` and `fix:lint` on staged files |
+| `check:imports`     | checks for unimported code                      |
 
 ### Fix
 

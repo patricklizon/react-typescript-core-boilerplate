@@ -18,8 +18,8 @@ jobs:
           cache: "npm"
 
       - run: npm ci
-      - run: npm run test:imports
-      - run: npm run test:format
-      - run: npm run test:types
-      - run: npm run test:lint
+      - run: npm run check:imports
+      - run: npm run check:format
+      - run: npm run check:types
+      - run: npm run check:lint
       - run: npm test
