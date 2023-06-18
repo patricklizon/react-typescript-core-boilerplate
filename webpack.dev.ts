@@ -12,7 +12,7 @@ type Configuration = WebpackConfig & { devServer: WebpackDevServerConfig };
 const devConfig: Configuration = {
   mode: "development",
 
-  entry: path.resolve(__dirname, "src/index.tsx"),
+  entry: path.resolve(__dirname, "src/main.tsx"),
 
   output: {
     publicPath: "/",

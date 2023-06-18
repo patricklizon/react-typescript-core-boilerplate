@@ -5,7 +5,7 @@ import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
 import type { Configuration } from "webpack";
 
 const commonConfig: Configuration = {
-  entry: path.resolve(__dirname, "src/index.tsx"),
+  entry: path.resolve(__dirname, "src/main.tsx"),
 
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],

@@ -3,7 +3,8 @@ import { createRoot } from "react-dom/client";
 
 import { App } from "./app";
 
-import "./index.css";
+import "./styles/app.css";
+import "./styles/reset.css";
 
 const node = document.getElementById("root");
 if (!node) throw new Error("Root element does not exist");
