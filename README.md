@@ -75,7 +75,8 @@ Summary of npm scripts.
 | Script             | Description                                     |
 | ------------------ | ----------------------------------------------- |
 | `test`             | run unit tests                                  |
-| `test:watch`       | run `test` in watch mode                        |
+| `test:coverage`    | run `test` in watch mode                        |
+| `test:watch`       | run `test` and generate coverage report         |
 
 ### Checks
 
