@@ -74,7 +74,7 @@
     "mock-css-modules": "^2.0.0",
     "postcss": "^8.4.13",
     "postcss-loader": "^7.3.3",
-    "prettier": "^2.7.1",
+    "prettier": "^2.8.8",
     "raw-loader": "^4.0.2",
     "react-refresh": "^0.14.0",
     "serve": "^14.2.0",
