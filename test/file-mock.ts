@@ -5,6 +5,6 @@
 
 require.extensions[".svg"] = noop;
 
-function noop() {
-  return null;
+function noop(): void {
+  return;
 }
