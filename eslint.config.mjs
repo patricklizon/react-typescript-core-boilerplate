@@ -1,3 +1,6 @@
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
 import js from "@eslint/js";
 import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import parser from "@typescript-eslint/parser";
@@ -8,9 +11,6 @@ import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
 import sonarjsPlugin from "eslint-plugin-sonarjs";
 import globals from "globals";
-
-import path from "node:path";
-import { fileURLToPath } from "node:url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -327,6 +327,7 @@ const ambientModulesConfigOverride = {
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/no-unused-vars": "off",
+    "import/no-default-export": "off",
   },
 };
 
