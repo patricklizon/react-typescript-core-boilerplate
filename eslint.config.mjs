@@ -9,6 +9,12 @@ import reactHooksPlugin from "eslint-plugin-react-hooks";
 import sonarjsPlugin from "eslint-plugin-sonarjs";
 import globals from "globals";
 
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 function makeMicroMatchPath(path, extensions) {
   const dict = {
     js: ["js", "cjs", "mjs"],
@@ -83,8 +89,10 @@ const typescriptRulesConfig = {
   languageOptions: {
     parser,
     parserOptions: {
-      ecmaFeatures: { modules: true, jsx: true },
+      ecmaVersion: "latest",
+      sourceType: "module",
       project: "./tsconfig.json",
+      tstconfigRootDir: __dirname,
       jsxPragma: null, // for @typescript/eslint-parser
     },
     globals: globals.browser,

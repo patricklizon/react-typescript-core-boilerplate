@@ -1,6 +1,5 @@
-import { Counter } from "@components/Counter";
-
-import styles from "./app.module.css";
+import { Counter } from "@/features/counter";
+import styles from "@/app.module.css";
 
 export function App(): JSX.Element {
   return (

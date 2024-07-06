@@ -1,39 +1,39 @@
-import { useCallback, useState } from "react";
+import { type ReactNode, useCallback, useState } from "react";
 
-import styles from "./Counter.module.css";
+import styles from "./counter.module.css";
 
 export type CounterProps = {
   value?: number;
   step?: number;
-  "data-testid"?: string;
+  testId?: string;
 };
 
 export function Counter({
-  "data-testid": dataTestId = "Counter",
+  testId = "Counter",
   value = 0,
   step = 1,
-}: CounterProps): JSX.Element {
+}: CounterProps): ReactNode {
   const [count, setCount] = useState(value);
 
   const decrement = useCallback(() => setCount((ps) => ps - step), [step]);
   const increment = useCallback(() => setCount((ps) => ps + step), [step]);
 
   return (
-    <div data-testid={dataTestId} className={styles.root}>
+    <div data-testid={testId} className={styles.root}>
       <button
         onClick={decrement}
         className={styles.button}
-        data-testid={`${dataTestId}.decrement`}
+        data-testid={`${testId}.decrement`}
       >
         -
       </button>
-      <span data-testid={`${dataTestId}.display`} className={styles.display}>
+      <span data-testid={`${testId}.display`} className={styles.display}>
         {count}
       </span>
       <button
         onClick={increment}
         className={styles.button}
-        data-testid={`${dataTestId}.increment`}
+        data-testid={`${testId}.increment`}
       >
         +
       </button>
