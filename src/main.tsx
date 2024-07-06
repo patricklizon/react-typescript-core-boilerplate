@@ -13,5 +13,5 @@ const root = createRoot(node);
 root.render(
   <StrictMode>
     <App />
-  </StrictMode>
+  </StrictMode>,
 );

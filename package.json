@@ -52,7 +52,7 @@
     "happy-dom": "^14.12.3",
     "lint-staged": "^15.2.7",
     "mock-css-modules": "^2.0.0",
-    "prettier": "^2.8.8",
+    "prettier": "3.3.2",
     "typescript": "^5.5.3",
     "unimported": "^1.29.1",
     "vite": "^5.3.3",
