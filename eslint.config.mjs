@@ -1,13 +1,13 @@
-const js = require("@eslint/js");
-const typescriptPlugin = require("@typescript-eslint/eslint-plugin");
-const parser = require("@typescript-eslint/parser");
-const importPlugin = require("eslint-plugin-import");
-const jestPlugin = require("eslint-plugin-jest");
-const a11yPlugin = require("eslint-plugin-jsx-a11y");
-const reactPlugin = require("eslint-plugin-react");
-const reactHooksPlugin = require("eslint-plugin-react-hooks");
-const sonarjsPlugin = require("eslint-plugin-sonarjs");
-const globals = require("globals");
+import js from "@eslint/js";
+import typescriptPlugin from "@typescript-eslint/eslint-plugin";
+import parser from "@typescript-eslint/parser";
+import importPlugin from "eslint-plugin-import";
+import jestPlugin from "eslint-plugin-jest";
+import a11yPlugin from "eslint-plugin-jsx-a11y";
+import reactPlugin from "eslint-plugin-react";
+import reactHooksPlugin from "eslint-plugin-react-hooks";
+import sonarjsPlugin from "eslint-plugin-sonarjs";
+import globals from "globals";
 
 function makeMicroMatchPath(path, extensions) {
   const dict = {
@@ -108,7 +108,7 @@ const typescriptRulesConfig = {
       },
       {
         selector: "variable",
-        format: ["camelCase", "UPPER_CASE"],
+        format: ["camelCase", "UPPER_CASE", "PascalCase"],
       },
       {
         selector: "variable",
@@ -339,4 +339,4 @@ const overrides = [
   configFilesConfigOverride,
 ];
 
-module.exports = [eslintBaseConfig].concat(rules).concat(overrides);
+export default [eslintBaseConfig].concat(rules).concat(overrides);
