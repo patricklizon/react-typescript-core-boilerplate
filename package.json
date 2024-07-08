@@ -6,7 +6,7 @@
   "scripts": {
     "build:perf": "export NODE_ENV=performance; vite build",
     "build": "vite build",
-    "check:format": "prettier --check --config ./.prettierrc \"src/**/*.(ts|tsx)\"",
+    "check:format": "prettier --check --config ./.prettierrc \"**/*.(ts|tsx|md)\" --log-level silent",
     "check:imports": "unimported",
     "check:lint": "eslint --config ./eslint.config.mjs ./src",
     "check:types": "tsc -p tsconfig.json --noEmit --skipLibCheck",

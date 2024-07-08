@@ -62,29 +62,29 @@ Summary of npm scripts.
 
 ### General
 
-| Script  | Description                    |
-| ------- | ------------------------------ |
-| `start` | starts application in DEV mode |
-| `build` | builds app in PROD mode        |
+| Script       | Description                              |
+| ------------ | ---------------------------------------- |
+| `start`      | starts application in DEV mode           |
+| `build`      | builds app in PROD mode                  |
 | `build:perf` | builds app in performance debugging mode |
-| `serve` | serves built application        |
+| `serve`      | serves built application                 |
 
 ### Test
 
-| Script             | Description                                     |
-| ------------------ | ----------------------------------------------- |
-| `test`             | run unit tests                                  |
-| `test:coverage`    | run `test` and generate coverage report |
-| `test:watch`       | run `test` in watch mode          |
+| Script          | Description                             |
+| --------------- | --------------------------------------- |
+| `test`          | run unit tests                          |
+| `test:coverage` | run `test` and generate coverage report |
+| `test:watch`    | run `test` in watch mode                |
 
 ### Checks
 
-| Script             | Description                                     |
-| ------------------ | ----------------------------------------------- |
-| `check:types`       | validates TS types                              |
-| `check:format`      | validates code formatting                       |
-| `check:lint`        | validates linting rules                         |
-| `check:imports`     | checks for unimported code                      |
+| Script          | Description                |
+| --------------- | -------------------------- |
+| `check:types`   | validates TS types         |
+| `check:format`  | validates code formatting  |
+| `check:lint`    | validates linting rules    |
+| `check:imports` | checks for unimported code |
 
 ### Fix
 
