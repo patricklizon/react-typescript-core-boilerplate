@@ -21,7 +21,7 @@ function makeMicroMatchPath(path, extensions) {
     ts: ["ts", "cts", "mts"],
     jsx: ["tsx"],
   };
-  const exts = Array.from(new Set(extensions.map((ext) => dict[ext]).flat()));
+  const exts = Array.from(new Set(extensions.flatMap((ext) => dict[ext])));
   const first = exts[0];
   if (!first) throw new Error("did not match extensions");
   const extensionPattern = exts.length > 1 ? `{${exts.join(",")}}` : first;
@@ -114,15 +114,6 @@ const typescriptRulesConfig = {
         format: ["PascalCase"],
         prefix: ["is", "should", "has", "can", "did", "will"],
       },
-      {
-        selector: "variable",
-        format: ["camelCase", "UPPER_CASE", "PascalCase"],
-      },
-      {
-        selector: "variable",
-        modifiers: ["destructured"],
-        format: null,
-      },
     ],
     "no-implied-eval": "off",
     "@typescript-eslint/no-implied-eval": ["error"],
@@ -141,10 +132,12 @@ const typescriptRulesConfig = {
       "error",
       {
         args: "all",
-        ignoreRestSiblings: true,
-        vars: "all",
         argsIgnorePattern: "^_",
+        caughtErrors: "all",
+        caughtErrorsIgnorePattern: "^_",
         destructuredArrayIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
+        ignoreRestSiblings: true,
       },
     ],
     "@typescript-eslint/no-namespace": [
@@ -348,4 +341,4 @@ const overrides = [
   configFilesConfigOverride,
 ];
 
-export default [eslintBaseConfig].concat(rules).concat(overrides);
+export default [eslintBaseConfig].concat(rules, overrides);
