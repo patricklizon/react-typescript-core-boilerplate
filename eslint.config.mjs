@@ -1,7 +1,7 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import js from "@eslint/js";
+import jsPlugin from "@eslint/js";
 import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import parser from "@typescript-eslint/parser";
 import importPlugin from "eslint-plugin-import";
@@ -50,14 +50,36 @@ const eslintBaseConfig = {
 };
 
 /**
- * Shared rules between js and ts
+ * ESLint's recommended rules for js files
  */
-const commonJsTsRulesConfig = {
-  files: [makeMicroMatchPath("src/**/*", ["js", "ts"])],
+const jsRecommendedRulesConfig = {
+  files: [makeMicroMatchPath("src/**/*", ["js", "ts", "tsx"])],
   rules: {
-    "spaced-comment": ["warn", "always"],
+    ...jsPlugin.configs.recommended.rules,
     "constructor-super": "error",
     "no-console": "error",
+    "no-else-return": "error",
+    "no-nested-ternary": "error",
+    "no-self-compare": "error",
+    "no-unneeded-ternary": "error",
+    "no-unreachable-loop": "error",
+    "prefer-const": "error",
+    "prefer-exponentiation-operator": "error",
+    "prefer-named-capture-group": "error",
+    "prefer-numeric-literals": "error",
+    "prefer-object-has-own": "error",
+    "prefer-rest-params": "error",
+    "prefer-spread": "error",
+    "sort-keys": [
+      "error",
+      "asc",
+      { caseSensitive: true, natural: false, minKeys: 2 },
+    ],
+    // TODO: enable after updating eslint to version 9
+    // "no-useless-assignment": "error",
+    "spaced-comment": ["warn", "always"],
+    eqeqeq: "error",
+    yoda: ["error", "never", { exceptRange: true }],
     "no-restricted-syntax": [
       "error",
       "ForInStatement",
@@ -68,14 +90,6 @@ const commonJsTsRulesConfig = {
       },
     ],
   },
-};
-
-/**
- * ESLint's recommended rules for js files
- */
-const jsRecommendedRulesConfig = {
-  files: [makeMicroMatchPath("src/**/*", ["js"])],
-  rules: js.configs.recommended.rules,
 };
 
 /**
@@ -234,7 +248,7 @@ const sonarjsRulesConfig = {
     sonarjs: sonarjsPlugin,
   },
   rules: {
-    ...sonarjsPlugin.configs.recommended.rules,
+    ...sonarjsPlugin.configs["recommended-legacy"].rules,
     "sonarjs/elseif-without-else": "error",
     "sonarjs/no-inverted-boolean-check": "error",
   },
@@ -325,13 +339,12 @@ const ambientModulesConfigOverride = {
 };
 
 const rules = [
-  a11yJsxRulesConfig,
-  commonJsTsRulesConfig,
-  importRulesConfig,
   jsRecommendedRulesConfig,
-  reactRulesConfig,
-  sonarjsRulesConfig,
   typescriptRulesConfig,
+  sonarjsRulesConfig,
+  importRulesConfig,
+  a11yJsxRulesConfig,
+  reactRulesConfig,
 ];
 
 const overrides = [
