@@ -1,10 +1,27 @@
 .layout {
-  align-items: center;
   display: flex;
   flex-direction: column;
   flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100%;
-  width: 100%;
+}
+
+.cell {
+  flex: 1;
+  flex-shrink: 0;
+}
+
+.label {
+  font-size: 16;
+  color: gray;
+}
+
+.value {
+  font-size: 20;
+  color: black;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
